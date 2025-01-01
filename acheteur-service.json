@@ -1,0 +1,24 @@
+{
+  "id": "acheteur-service",
+  "cpus": 0.5,
+  "mem": 512,
+  "instances": 1,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "mohamed805/acheteur-service2",
+      "network": "BRIDGE",
+      "portMappings": [
+        {
+          "containerPort": 8081,
+          "hostPort": 0,
+          "protocol": "tcp"
+        }
+      ]
+    }
+  },
+  "env": {
+    "DISCOVERY_SERVICE_URL": "http://discovery-service:8761/eureka",
+    "CONFIG_SERVICE_URL": "http://config-service:9999"
+  }
+}

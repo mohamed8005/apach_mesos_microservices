@@ -1,0 +1,45 @@
+{
+  "name": "simple-service-job",
+  "command": "java -cp /app/resources:/app/classes:/app/libs/* com.mycompany.simpleservice.SimpleServiceApplication",
+  "shell": true,
+  "executor": "",
+  "executorFlags": "",
+  "taskInfoData": "",
+  "retries": 0,
+  "owner": "",
+  "ownerName": "",
+  "description": "What this job does is ...",
+  "cpus": 0.1,
+  "disk": 0,
+  "mem": 128,
+  "disabled": false,
+  "softError": false,
+  "dataProcessingJobType": false,
+  "fetch": [],
+  "uris": [],
+  "environmentVariables": [
+    {
+      "name": "EXIT_CODE",
+      "value": "0"
+    },
+    {
+      "name": "SLEEP",
+      "value": "10000"
+    }
+  ],
+  "arguments": [],
+  "highPriority": false,
+  "runAsUser": "root",
+  "concurrent": false,
+  "container": {
+    "type": "docker",
+    "image": "ivanfranchin/simple-service:1.0.0",
+    "network": "HOST",
+    "volumes": [],
+    "forcePullImage": false,
+    "parameters": []
+  },
+  "constraints": [],
+  "schedule": "R/2021-06-21T00:00:00.000Z/PT2M",
+  "scheduleTimeZone": ""
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.6.4</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.mycompany</groupId>
+    <artifactId>springboot-mesos-chronos</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>springboot-mesos-chronos</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <java.version>11</java.version>
+        <jib-maven-plugin.version>3.2.0</jib-maven-plugin.version>
+        <openjdk-image.version>11.0.13</openjdk-image.version>
+        <docker-image.prefix>ivanfranchin</docker-image.prefix>
+    </properties>
+
+    <modules>
+        <module>simple-service</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>${jib-maven-plugin.version}</version>
+                <configuration>
+                    <from>
+                        <image>openjdk:${openjdk-image.version}</image>
+                    </from>
+                    <to>
+                        <image>${docker-image.prefix}/${project.artifactId}:${project.version}</image>
+                    </to>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
