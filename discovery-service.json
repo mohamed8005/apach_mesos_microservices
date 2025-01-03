@@ -11,11 +11,19 @@
         "portMappings": [
           {
             "containerPort": 8761,
-            "hostPort": 0,
+            "hostPort": 31998,
             "protocol": "tcp"
           }
-        ]
+        ],
+        "parameters": [
+        {
+          "key": "label",
+          "value": "custom_name=discovery-service"
+        }
+      ]
       }
-    }
+    },"labels": {
+    "container_name": "discovery-service"
+  }
   }
   

@@ -11,14 +11,25 @@
       "portMappings": [
         {
           "containerPort": 8081,
-          "hostPort": 0,
+          "hostPort": 31996,
           "protocol": "tcp"
+        }
+      ],
+      "parameters": [
+        {
+          "key": "label",
+          "value": "custom_name=acheteur-service"
         }
       ]
     }
   },
+  "labels": {
+    "container_name": "acheteur-service"
+  },
   "env": {
-    "DISCOVERY_SERVICE_URL": "http://discovery-service:8761/eureka",
-    "CONFIG_SERVICE_URL": "http://config-service:9999"
+    "SPRING_CONFIG_IMPORT": "optional:configserver:${CONFIG_SERVICE_URL}",
+    "EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE": "${DISCOVERY_SERVICE_URL}",
+    "DISCOVERY_SERVICE_URL": "http://172.22.96.1:31998/eureka",
+    "CONFIG_SERVICE_URL": "http://172.22.96.1:31999"
   }
 }
