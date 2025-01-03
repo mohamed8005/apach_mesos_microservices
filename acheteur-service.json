@@ -31,5 +31,17 @@
     "EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE": "${DISCOVERY_SERVICE_URL}",
     "DISCOVERY_SERVICE_URL": "http://172.22.96.1:31998/eureka",
     "CONFIG_SERVICE_URL": "http://172.22.96.1:31999"
-  }
+  },
+  "healthChecks": [
+    {
+      "protocol": "COMMAND",
+      "command": {
+        "value": "curl -s -o /dev/null -w '%{http_code}' http://172.22.96.1:31996/actuator/health | grep 200"
+      },
+      "gracePeriodSeconds": 30,
+      "intervalSeconds": 10,
+      "timeoutSeconds": 5,
+      "maxConsecutiveFailures": 3
+    }
+  ]
 }
